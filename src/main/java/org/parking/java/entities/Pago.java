@@ -11,6 +11,8 @@ public class Pago {
     //Atributo de relación
     public Vehiculo vehiculo;
     public Cupo cupo;
+    public Empleado empleado;
+
 
 
     //Constructor por defecto     
@@ -23,12 +25,14 @@ public class Pago {
                 LocalDateTime fechaHoraFin, 
                 Double valor, 
                 Vehiculo vehiculo, 
-                Cupo cupo) {
+                Cupo cupo,
+                Empleado empleado) {
         this.fechaHoraInicio = fechaHoraInicio;
         this.fechaHoraFin = fechaHoraFin;
         this.valor = valor;
         this.vehiculo = vehiculo;
         this.cupo = cupo;
+        this.empleado = empleado; 
     }
 
 

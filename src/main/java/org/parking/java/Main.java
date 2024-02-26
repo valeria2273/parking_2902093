@@ -1,8 +1,16 @@
 package org.parking.java;
 
 import org.parking.java.entities.Cliente;
+import org.parking.java.entities.Cupo;
+import org.parking.java.entities.Empleado;
+import org.parking.java.entities.Pago;
 import org.parking.java.entities.TipoVehiculo;
 import org.parking.java.entities.Vehiculo;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -32,5 +40,74 @@ public class Main {
         }
        
         System.out.println(cliente1.nombres);
-    }
+
+        //Instanciar cupos:
+
+        Cupo cupito1 = new Cupo('A');
+        Cupo cupito2 = new Cupo('B');
+
+        //Instanciar empleado:
+
+        Empleado empleado1 = new Empleado("Gustavito", "Fernandez", "12345");
+
+        //Crear fechas
+
+        LocalDateTime fechaHoraInicio = LocalDateTime.of(2024, Month.FEBRUARY, 1, 15, 30, 0);
+
+        LocalDateTime fechaHoraFin = LocalDateTime.of(2024, Month.FEBRUARY, 10, 6, 15, 5);
+
+
+        //Hacer registros (pagos)
+
+        Pago pago1 = new Pago(fechaHoraInicio , 
+                              fechaHoraFin , 
+                              5000.0 , cliente1.misVehiculos.get(0) , 
+                              cupito1,empleado1 );
+
+        Pago pago2 = new Pago(fechaHoraInicio , 
+                              fechaHoraFin , 
+                              10000.0 , cliente1.misVehiculos.get(0) , 
+                              cupito2, empleado1 );    
+                              
+                              
+        //Añadir pagos a una lista de pagos
+
+        List<Pago> misPagos = new ArrayList<Pago>();
+        misPagos.add(pago1);
+        misPagos.add(pago2);
+
+
+        //Recorrer los pagos para mostrar informacion
+
+        for( Pago p : misPagos ){
+            //Evidencia 
+            //Mostrar
+            //  - Placa del Vehiculo
+            //  - Valor pagado
+            //  - Fecha y hora de inicio 
+            //  - fecha horfa del fin 
+            //  - Cupo (nombre)
+
+            System.out.println("|Pago:|Placa:" + p.vehiculo.placa + "|" );
+            System.out.println("|valor:" + p.valor + "|");
+            System.out.println("|fecha y hora de entrada:" + p.fechaHoraInicio.toString() + "|");
+            System.out.println("|fecha y hora de fin:" + p.fechaHoraFin.toString() + "|");
+            System.out.println("|Cupo:" + p.cupo.nombre + "|");
+            System.out.println("|Empleado:" + p.empleado.codigo + "|");
+
+
+
+
+
+
+        }
+
+
+
 }
+
+    }
+    
+
+
+    
