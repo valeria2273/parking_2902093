@@ -1,8 +1,11 @@
 package org.parking.java.entities;
 
 public class Vehiculo {
-    public String placa;
-    public TipoVehiculo tipoVehiculo;
+
+    // Los Atributos de una Clase para cumplir con el Encapsulamiento DEBEN SER PRIVADOS!!!!
+
+    private String placa;
+    private TipoVehiculo tipoVehiculo;
 
     //Constructor
     //Sin parametros: Constructor con defecto
@@ -16,5 +19,44 @@ public class Vehiculo {
         this.tipoVehiculo = tipoVehiculo;
     }
 
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public TipoVehiculo getTipoVehiculo() {
+        return tipoVehiculo;
+    }
+
+    public void setTipoVehiculo(TipoVehiculo tipoVehiculo) {
+        this.tipoVehiculo = tipoVehiculo;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 }

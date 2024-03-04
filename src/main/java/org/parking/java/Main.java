@@ -21,6 +21,9 @@ public class Main {
 
        Vehiculo carrito2 = new Vehiculo("ASD 143", TipoVehiculo.TAXI);
 
+       Vehiculo motico = new Vehiculo();
+       motico.setPlaca("XS 439");
+
 
        //crear(instanciar) un cliente 
 
@@ -88,12 +91,11 @@ public class Main {
             //  - fecha horfa del fin 
             //  - Cupo (nombre)
 
-            System.out.println("|Pago:|Placa:" + p.vehiculo.placa + "|" );
-            System.out.println("|valor:" + p.valor + "|");
-            System.out.println("|fecha y hora de entrada:" + p.fechaHoraInicio.toString() + "|");
-            System.out.println("|fecha y hora de fin:" + p.fechaHoraFin.toString() + "|");
-            System.out.println("|Cupo:" + p.cupo.nombre + "|");
-            System.out.println("|Empleado:" + p.empleado.codigo + "|");
+            System.out.println("|Pago:|Placa:" + p.getVehiculo().getPlaca() + "|" +
+                                "|valor:" + p.getValor() + "|" +"|fecha y hora de entrada:" 
+                                + p.getFechaHoraInicio().toString() + "|" + "|fecha y hora de fin:" 
+                                + p.getFechaHoraFin().toString() + "|" + "|Cupo:" + p.getCupo().getNombre() + "|" +
+                                "|Empleado:" + p.getEmpleado().getCodigo() + "|");
 
 
 
